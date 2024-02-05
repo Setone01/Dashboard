@@ -6,6 +6,7 @@ import History from "./page/History/History";
 // import { usersData } from "./api/Api";
 import { usersData } from "./assets/constant";
 import Profile from "./components/userProfile/Profile";
+import AddUser from "./components/Form/AddUser";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/history",
         element: <History />,
+      },
+      {
+        path: "/add_user",
+        element:<AddUser/>,
       },
     ],
   },
