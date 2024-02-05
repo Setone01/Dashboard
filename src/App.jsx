@@ -3,8 +3,8 @@ import "./App.css";
 import DashboardLayout from "./layout/DashboardLayout";
 import Home from "./page/Home/Home";
 import History from "./page/History/History";
-// import { usersData } from "./api/Api";
-import { usersData } from "./assets/constant";
+// import { axiosInstance } from "./api/Api";
+// import { usersData } from "./assets/constant";
 import Profile from "./components/userProfile/Profile";
 import AddUser from "./components/Form/AddUser";
 
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        // loader: usersData,
+        // loader: axiosInstance,
       },
       {
         path: "/user/:id",

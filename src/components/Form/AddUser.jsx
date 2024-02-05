@@ -13,11 +13,16 @@ const AddUser = () => {
     desc: "",
   });
 
-  const updateForm = (e) =>{
+  const updateForm = (e) => {
     const value = e.target;
-    setForm({...form, [name] :value})
-  }
- 
+    setForm({ ...form, [name]: value });
+  };
+
+  const handleSumbmitForm = (e) => {
+    e.preventDefault();
+    alert("User info sumitted");
+  };
+
   return (
     <div className="w-full h-auto p-5 border-[1.3px] rounded-md shadow-md">
       <div className="">
@@ -37,6 +42,9 @@ const AddUser = () => {
                 <input
                   className="bg-white px-4 py-2 border-[1.3px] rounded-md text-[12px] font-normal outline-none focus:border-slate-800"
                   type="text"
+                  name="name"
+                  value={form.name}
+                  onChange={updateForm}
                   placeholder="Name"
                 />
               </div>
@@ -50,7 +58,26 @@ const AddUser = () => {
                 <input
                   className="bg-white px-4 py-2 border-[1.3px] rounded-md text-[12px] font-normal outline-none focus:border-slate-800"
                   type="text"
+                  name="username"
+                  value={form.username}
+                  onChange={updateForm}
                   placeholder="Username"
+                />
+              </div>
+              <div className="w-full flex justify-normal flex-col">
+                <label
+                  className="text-[12px] text-slate-600 font-normal pb-1"
+                  htmlFor=""
+                >
+                  Email
+                </label>
+                <input
+                  className="bg-white px-4 py-2 border-[1.3px] rounded-md text-[12px] font-normal outline-none focus:border-slate-800"
+                  type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={updateForm}
+                  placeholder="highdev@example.com"
                 />
               </div>
               <div className="w-full flex justify-normal flex-col">
@@ -63,6 +90,9 @@ const AddUser = () => {
                 <input
                   className="bg-white px-4 py-2 border-[1.3px] rounded-md text-[12px] font-normal outline-none focus:border-slate-800"
                   type="text"
+                  name="address"
+                  value={form.address}
+                  onChange={updateForm}
                   placeholder="Address"
                 />
               </div>
@@ -76,6 +106,9 @@ const AddUser = () => {
                 <input
                   className="bg-white px-4 py-2 border-[1.3px] rounded-md text-[12px] font-normal outline-none focus:border-slate-800"
                   type="text"
+                  name="phone"
+                  value={form.phone}
+                  onChange={updateForm}
                   placeholder="Phone no"
                 />
               </div>
@@ -89,6 +122,9 @@ const AddUser = () => {
                 <input
                   className="bg-white px-4 py-2 border-[1.3px] rounded-md text-[12px] font-normal outline-none focus:border-slate-800"
                   type="text"
+                  name="website"
+                  value={form.website}
+                  onChange={updateForm}
                   placeholder="Website"
                 />
               </div>
@@ -109,6 +145,9 @@ const AddUser = () => {
                 <input
                   className="bg-white px-4 py-2 border-[1.3px] rounded-md text-[12px] font-medium outline-none focus:border-slate-800"
                   type="text"
+                  name="company"
+                  value={form.company}
+                  onChange={updateForm}
                   placeholder="Company"
                 />
               </div>
@@ -122,6 +161,9 @@ const AddUser = () => {
                 <input
                   className="bg-white px-4 py-2 border-[1.3px] rounded-md text-[12px] font-medium outline-none focus:border-slate-800"
                   type="text"
+                  name="desc"
+                  value={form.desc}
+                  onChange={updateForm}
                   placeholder="Description"
                 />
               </div>
@@ -135,13 +177,16 @@ const AddUser = () => {
                 <input
                   className="bg-white px-4 py-2 border-[1.3px] rounded-md text-[12px] font-medium outline-none focus:border-slate-800"
                   type="text"
+                  name="value"
+                  value={form.value}
+                  onChange={updateForm}
                   placeholder="Value"
                 />
               </div>
             </div>
           </div>
           <div className=" flex justify-end my-4">
-            <button className=" bg-slate-800 px-6 py-2 text-[12px] text-white font-normal rounded-md uppercase">
+            <button onClick={handleSumbmitForm} className=" bg-slate-800 px-6 py-2 text-[12px] text-white font-normal rounded-md uppercase">
               add user
             </button>
           </div>

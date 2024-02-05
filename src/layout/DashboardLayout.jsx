@@ -10,9 +10,9 @@ const DashboardLayout = () => {
         <div className=" col-span-1 h-full">
           <Sidebar />
         </div>
-        <div className="bg-white col-span-3 pr-4 pl-6 pb-10 z-40">
+        <div className="w-full bg-white col-span-3 px-6 pb-10 z-40 ring">
           <Header />
-          <div className=" mt-5">
+          <div className="w-full mt-5">
             <Outlet />
           </div>
         </div>

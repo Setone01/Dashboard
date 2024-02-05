@@ -1,33 +1,28 @@
-import React, { useState } from "react";
-import { usersData } from "../../assets/constant";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { UserGroupIcon } from "@heroicons/react/24/solid";
 
-const UserList = () => {
+const UserList = ({ users }) => {
   const [show, setShow] = useState(false);
+  const [id, setId] = useState(null);
   const navigate = useNavigate();
-  const userId = usersData.name;
-  const idString = (userId) => {
-    return String(userId).toLowerCase().split(" ").join("");
-  };
-  //in getting all the userId, i made rootId which will take idString
-  const rootId = idString(userId);
 
-  console.log(rootId);
-
-  const handleUserDetails = () => {
+  const handleUserDetails = (rootId) => {
     navigate(`/user/${rootId}`);
   };
 
-  const handleDropdown = () => {
-    setShow(!show);
+  const handleDropdown = (userId) => {
+    if (id === userId) setShow(!show);
   };
+
+
   return (
     <div className="w-full">
       <div className="">
         <div className="">
           <h1>Recent Activity</h1>
         </div>
-        <div className="w-full mt-4 rounded-md bg-white shadow-md relative overflow-hidden">
+        <div className="w-full mt-4 rounded-md bg-white shadow-md relative">
           <table className="w-full text-sm text-left rtl:text-right divide-y-2 rounded-md overflow-hidden">
             <thead className="table-auto text-xs text-gray-700 font-medium uppercase bg-indigo-50">
               <tr>
@@ -57,7 +52,7 @@ const UserList = () => {
               </tr>
             </thead>
             <tbody>
-              {usersData.map((user) => (
+              {users?.map((user) => (
                 <tr
                   key={user.id}
                   className="bg-white border-b text-[12px] font-normal  hover:bg-gray-50"
@@ -80,7 +75,12 @@ const UserList = () => {
                   <td className="px-6 py-2">{user.email}</td>
                   <td className="px-6 py-2">{user.phone}</td>
                   <td className="px-6 py-2 relative">
-                    <button onClick={handleDropdown}>
+                    <button
+                      onClick={() => {
+                        setId(user.id);
+                        handleDropdown(user.id);
+                      }}
+                    >
                       <svg
                         width="4"
                         height="16"
@@ -94,11 +94,11 @@ const UserList = () => {
                         />
                       </svg>
                     </button>
-                    {show ? (
+                    {show && user.id === id ? (
                       <div className="absolute bg-white bottom-4 right-10 w-32 rounded-md shadow-md overflow-hidden">
                         <ul className="w-full flex items-center justify-start flex-col">
                           <li
-                            onClick={handleUserDetails}
+                            onClick={() => handleUserDetails(user.id)}
                             className="w-full flex items-center text-[10px] px-2 py-1 capitalize hover:bg-gray-400/10"
                           >
                             <span className="mr-2">
