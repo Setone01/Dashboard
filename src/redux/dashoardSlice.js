@@ -9,7 +9,6 @@ export const dashboardSlice = createSlice({
   name: "dashboard",
   initialState,
   reducers: {
-
     //add user to the table
     addUser: (state, action) => {
       state.usersData = action.payload;
@@ -17,13 +16,13 @@ export const dashboardSlice = createSlice({
 
     // delete user
     deleteUser: (state, action) => {
-      state.usersData = action.payload;
+      state.usersData = state.usersData.filter(
+        (item) => item.id !== action.payload
+      );
     },
 
     //edit profile
-    editProfile: (state, action) => {
-      state.usersData = action.payload;
-    },
+    editProfile: (state, action) => {},
   },
 });
 

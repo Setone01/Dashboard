@@ -171,7 +171,7 @@ const UserList = () => {
                   </td>
                 </tr>
               ))}
-              <tr className="bg-white text-[12px] font-normal  hover:bg-gray-50">
+              {/* <tr className="bg-white text-[12px] font-normal  hover:bg-gray-50">
                 <td className="w-4 p-3">
                   <div className="flex items-center">
                     <input
@@ -282,7 +282,7 @@ const UserList = () => {
                     ""
                   )}
                 </td>
-              </tr>
+              </tr> */}
             </tbody>
           </table>
         </div>

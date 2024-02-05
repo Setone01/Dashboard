@@ -1,6 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 
 const AddUser = () => {
+  const [form, setForm] = useState({
+    name: "",
+    username: "",
+    phone: "",
+    address: "",
+    email: "",
+    website: "",
+    company: "",
+    value: "",
+    desc: "",
+  });
+
+  const updateForm = (e) =>{
+    const value = e.target;
+    setForm({...form, [name] :value})
+  }
+ 
   return (
     <div className="w-full h-auto p-5 border-[1.3px] rounded-md shadow-md">
       <div className="">
@@ -11,7 +28,12 @@ const AddUser = () => {
             </h4>
             <div className=" bg-white grid sm:grid-cols-2 md:grid-cols-3 gap-5 py-3">
               <div className="w-full flex justify-normal flex-col">
-                <label className="text-[12px] text-slate-600 font-normal pb-1" htmlFor="">Name</label>
+                <label
+                  className="text-[12px] text-slate-600 font-normal pb-1"
+                  htmlFor=""
+                >
+                  Name
+                </label>
                 <input
                   className="bg-white px-4 py-2 border-[1.3px] rounded-md text-[12px] font-normal outline-none focus:border-slate-800"
                   type="text"
@@ -19,7 +41,12 @@ const AddUser = () => {
                 />
               </div>
               <div className="w-full flex justify-normal flex-col">
-                <label className="text-[12px] text-slate-600 font-normal pb-1" htmlFor="">Username</label>
+                <label
+                  className="text-[12px] text-slate-600 font-normal pb-1"
+                  htmlFor=""
+                >
+                  Username
+                </label>
                 <input
                   className="bg-white px-4 py-2 border-[1.3px] rounded-md text-[12px] font-normal outline-none focus:border-slate-800"
                   type="text"
@@ -27,7 +54,12 @@ const AddUser = () => {
                 />
               </div>
               <div className="w-full flex justify-normal flex-col">
-                <label className="text-[12px] text-slate-600 font-normal pb-1" htmlFor="">Address</label>
+                <label
+                  className="text-[12px] text-slate-600 font-normal pb-1"
+                  htmlFor=""
+                >
+                  Address
+                </label>
                 <input
                   className="bg-white px-4 py-2 border-[1.3px] rounded-md text-[12px] font-normal outline-none focus:border-slate-800"
                   type="text"
@@ -35,7 +67,12 @@ const AddUser = () => {
                 />
               </div>
               <div className="w-full flex justify-normal flex-col">
-                <label className="text-[12px] text-slate-600 font-normal pb-1" htmlFor="">Phone no</label>
+                <label
+                  className="text-[12px] text-slate-600 font-normal pb-1"
+                  htmlFor=""
+                >
+                  Phone no
+                </label>
                 <input
                   className="bg-white px-4 py-2 border-[1.3px] rounded-md text-[12px] font-normal outline-none focus:border-slate-800"
                   type="text"
@@ -43,7 +80,12 @@ const AddUser = () => {
                 />
               </div>
               <div className="w-full flex justify-normal flex-col">
-                <label className="text-[12px] text-slate-600 font-normal pb-1" htmlFor="">Website</label>
+                <label
+                  className="text-[12px] text-slate-600 font-normal pb-1"
+                  htmlFor=""
+                >
+                  Website
+                </label>
                 <input
                   className="bg-white px-4 py-2 border-[1.3px] rounded-md text-[12px] font-normal outline-none focus:border-slate-800"
                   type="text"
@@ -58,7 +100,12 @@ const AddUser = () => {
             </h4>
             <div className=" bg-white grid sm:grid-cols-2 md:grid-cols-3 gap-5 py-3">
               <div className="w-full flex justify-normal flex-col">
-                <label className="text-[12px] text-slate-600 font-normal pb-1" htmlFor="">Company Name</label>
+                <label
+                  className="text-[12px] text-slate-600 font-normal pb-1"
+                  htmlFor=""
+                >
+                  Company Name
+                </label>
                 <input
                   className="bg-white px-4 py-2 border-[1.3px] rounded-md text-[12px] font-medium outline-none focus:border-slate-800"
                   type="text"
@@ -66,7 +113,12 @@ const AddUser = () => {
                 />
               </div>
               <div className="w-full flex justify-normal flex-col">
-                <label className="text-[12px] text-slate-600 font-normal pb-1" htmlFor="">Description</label>
+                <label
+                  className="text-[12px] text-slate-600 font-normal pb-1"
+                  htmlFor=""
+                >
+                  Description
+                </label>
                 <input
                   className="bg-white px-4 py-2 border-[1.3px] rounded-md text-[12px] font-medium outline-none focus:border-slate-800"
                   type="text"
@@ -74,7 +126,12 @@ const AddUser = () => {
                 />
               </div>
               <div className="w-full flex justify-normal flex-col">
-                <label className="text-[12px] text-slate-600 font-normal pb-1" htmlFor="">Value</label>
+                <label
+                  className="text-[12px] text-slate-600 font-normal pb-1"
+                  htmlFor=""
+                >
+                  Value
+                </label>
                 <input
                   className="bg-white px-4 py-2 border-[1.3px] rounded-md text-[12px] font-medium outline-none focus:border-slate-800"
                   type="text"
@@ -84,8 +141,9 @@ const AddUser = () => {
             </div>
           </div>
           <div className=" flex justify-end my-4">
-
-          <button className=" bg-slate-800 px-6 py-2 text-[12px] text-white font-normal rounded-md uppercase">add user</button>
+            <button className=" bg-slate-800 px-6 py-2 text-[12px] text-white font-normal rounded-md uppercase">
+              add user
+            </button>
           </div>
         </form>
       </div>
