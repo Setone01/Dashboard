@@ -44,7 +44,7 @@ const Sidebar = () => {
     },
   ];
   return (
-    <div className=" bg-slate-950 w-full h-full fixed">
+    <div className="sm:hidden md:block bg-slate-950 w-full h-full fixed">
       <div className=" p-4">
         <h2 className=" text-2xl text-blue-900 font-bold uppercase mb-6">Devrecruit</h2>
         <div className="">

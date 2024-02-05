@@ -27,7 +27,7 @@ const UserList = () => {
         <div className="">
           <h1>Recent Activity</h1>
         </div>
-        <div className="w-full mt-4 rounded-md bg-white shadow-md relative overflow-hidden">
+        <div className="w-full mt-4 rounded-md bg-white shadow-md relative overflow-x-auto" id="wrapper">
           <table className="w-full text-sm text-left rtl:text-right divide-y-2 rounded-md overflow-hidden">
             <thead className="table-auto text-xs text-gray-700 font-medium uppercase bg-indigo-50">
               <tr>
@@ -62,7 +62,7 @@ const UserList = () => {
                   key={user.id}
                   className="bg-white border-b text-[12px] font-normal  hover:bg-gray-50"
                 >
-                  <td className="w-4 p-3">
+                  <td className="w-4 pl-3">
                     <div className="flex items-center">
                       <input
                         type="checkbox"
