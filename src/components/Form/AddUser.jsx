@@ -101,7 +101,7 @@ const AddUser = () => {
                   className="text-[12px] text-slate-600 font-normal pb-1"
                   htmlFor=""
                 >
-                  Phone no
+                  Mobile Number
                 </label>
                 <input
                   className="bg-white px-4 py-2 border-[1.3px] rounded-md text-[12px] font-normal outline-none focus:border-slate-800"
@@ -109,7 +109,7 @@ const AddUser = () => {
                   name="phone"
                   value={form.phone}
                   onChange={updateForm}
-                  placeholder="Phone no"
+                  placeholder="Mobile Number"
                 />
               </div>
               <div className="w-full flex justify-normal flex-col">

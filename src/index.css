@@ -36,24 +36,13 @@ html {
 
 body {
   margin: 0;
-  /* font-family: "Quicksand", sans-serif; */
+  font-family: 'Work Sans', sans-serif;
   min-width: 320px;
   min-height: 100dvh;
-  /* font-size: 80%; */
+  font-size: 80%;
 }
 
 #wrapper::-webkit-scrollbar{
   width: 0px;
 }
 
-/* body {
-  margin: 0;
-  padding: 0;
-  min-width: 320px;
-  min-height: 100dvh;
-} */
-
-/* h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-} */

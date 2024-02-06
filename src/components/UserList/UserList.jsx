@@ -19,7 +19,7 @@ const UserList = ({ users }) => {
     <div className="w-full">
       <div className="">
         <div className="">
-          <h1>Recent Activity</h1>
+          <h1 className="text-[15px] font-semibold">User List</h1>
         </div>
         <div className="w-full mt-4 rounded-md bg-white shadow-md relative overflow-x-auto" id="wrapper">
 
@@ -61,7 +61,7 @@ const UserList = ({ users }) => {
                     <div className="flex items-center">
                       <input
                         type="checkbox"
-                        className="w-4 h-4 bg-gray-100 border-slate-900 rounded outline-none"
+                        className="w-4 h-4 bg-transparent  rounded outline-none"
                       />
                     </div>
                   </td>
@@ -90,12 +90,12 @@ const UserList = ({ users }) => {
                       >
                         <path
                           d="M1.99992 4.1111C2.92214 4.1111 3.66658 3.36666 3.66658 2.44444C3.66658 1.52222 2.92214 0.777771 1.99992 0.777771C1.0777 0.777771 0.333252 1.52222 0.333252 2.44444C0.333252 3.36666 1.0777 4.1111 1.99992 4.1111ZM1.99992 6.33333C1.0777 6.33333 0.333252 7.07777 0.333252 7.99999C0.333252 8.92221 1.0777 9.66666 1.99992 9.66666C2.92214 9.66666 3.66658 8.92221 3.66658 7.99999C3.66658 7.07777 2.92214 6.33333 1.99992 6.33333ZM1.99992 11.8889C1.0777 11.8889 0.333252 12.6333 0.333252 13.5555C0.333252 14.4778 1.0777 15.2222 1.99992 15.2222C2.92214 15.2222 3.66658 14.4778 3.66658 13.5555C3.66658 12.6333 2.92214 11.8889 1.99992 11.8889Z"
-                          fill="#545F7D"
+                          fill="#6c717f"
                         />
                       </svg>
                     </button>
                     {show && user.id === id ? (
-                      <div className="absolute bg-white bottom-4 right-10 w-32 rounded-md shadow-md overflow-hidden">
+                      <div className="absolute bg-white -bottom-19 right-0 w-32 rounded-md shadow-md z-20 overflow-hidden">
                         <ul className="w-full flex items-center justify-start flex-col">
                           <li
                             onClick={() => handleUserDetails(user.id)}
