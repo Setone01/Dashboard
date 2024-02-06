@@ -1,6 +1,6 @@
 import { PencilSquareIcon } from "@heroicons/react/24/solid";
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const getSingleUsers = async () => {
   const { data } = await axiosInstance.get("/users/id");
@@ -8,6 +8,7 @@ const getSingleUsers = async () => {
 };
 
 const Profile = () => {
+  const navigation = useNavigate();
   const [info, setInfo] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -28,7 +29,10 @@ const Profile = () => {
   return (
     <div className="w-full h-auto mx-auto flex flex-col justify-center">
       <div className="mb-8">
-        <button className="flex items-center text-[12px] font-normal hover:bg-slate-100/30 p-2 rounded-md">
+        <button
+          onClick={() => navigate("/")}
+          className="flex items-center text-[12px] font-normal bg-slate-200/50 p-2 rounded-md"
+        >
           <span className="mr-3">
             <svg
               width="28"
