@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export async function usersData() {
-  const user = await axios.get("https://jsonplaceholder.typicode.com/users");
-  return user;
-}
+export const axiosInstance = axios.create({
+  baseURL: 'https://jsonplaceholder.typicode.com',
+  timeout: 15000,
+});
